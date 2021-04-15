@@ -9,15 +9,9 @@ services:
       - NODE_ENV=production
     build:
       context: ./
-    networks:
-      - proxy-tier
-      - caddy
 
   caddy:
     image: caddy/caddy:2.2.1-alpine
-    networks:
-      - proxy-tier
-      - caddy 
     container_name: caddy-service
     restart: unless-stopped
     ports:
@@ -28,12 +22,6 @@ services:
       - $PWD/site:/srv
       - caddy_data:/data
       - caddy_config:/config
-
-networks:
-  proxy-tier:
-    external:
-      name: caddy-proxy
-  caddy:     
 
 volumes:
   caddy_data:
