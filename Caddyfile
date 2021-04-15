@@ -2,6 +2,6 @@
   email tomanagle@gmail.com
 }
 
-caddy.tomdoes.tech {
+caddy.snipd.io {
   reverse_proxy node-app:4000
 }
