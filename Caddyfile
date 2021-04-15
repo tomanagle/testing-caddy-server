@@ -1,3 +1,8 @@
+{
+  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+  email tomanagle@gmail.com
+}
+
 caddy.tomdoes.tech {
   reverse_proxy node-app:4000
 }
