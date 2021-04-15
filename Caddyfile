@@ -1,3 +1,3 @@
-localhost {
+caddy.tomdoes.tech {
   reverse_proxy node-app:4000
 }
