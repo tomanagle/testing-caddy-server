@@ -1,6 +1,6 @@
 import http, { IncomingMessage, ServerResponse } from "http";
 
-const host = "localhost";
+const host = "0.0.0.0";
 const port = 4000;
 
 const requestListener = function (req: IncomingMessage, res: ServerResponse) {
