@@ -5,7 +5,7 @@ const port = 4000;
 
 const requestListener = function (req: IncomingMessage, res: ServerResponse) {
   res.writeHead(200);
-  res.end("Welcome from Caddy");
+  res.end("Hello world");
 };
 
 const server = http.createServer(requestListener);
