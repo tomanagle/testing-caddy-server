@@ -1,5 +1,22 @@
+header / {
+    # Enable HTTP Strict Transport Security (HSTS) to force clients to always
+    # connect via HTTPS (do not use if only testing)
+    Strict-Transport-Security "max-age=31536000;"
+    # Enable cross-site filter (XSS) and tell browser to block detected attacks
+    X-XSS-Protection "1; mode=block"
+    # Prevent some browsers from MIME-sniffing a response away from the declared Content-Type
+    X-Content-Type-Options "nosniff"
+    # Disallow the site to be rendered within a frame (clickjacking protection)
+    X-Frame-Options "DENY"
+    # Hide server header field
+    -Server
+    # Disable caching since https
+    # The cache should not store anything about the client request or server response.
+    Cache-Control "no-store"
+    Pragma "no-cache"
+}
+
+
 caddy.snipd.io {
-  reverse_proxy node-app:4000  {
-    header_down Strict-Transport-Security max-age=31536000;
-   }
+  reverse_proxy node-app:4000
 }
