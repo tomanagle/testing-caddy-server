@@ -1,3 +1,11 @@
 caddy.snipd.io {
-  reverse_proxy node-app:4000
+  reverse_proxy node-app:4000  {
+    header {
+         Strict-Transport-Security max-age=31536000;   
+    }      
+    transport http {
+      tls
+      tls_insecure_skip_verify
+	  }
+   }
 }

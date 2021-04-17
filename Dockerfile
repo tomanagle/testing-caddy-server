@@ -2,7 +2,7 @@ FROM node:14-alpine
 
 ADD package.json /tmp/package.json
 
-RUN rm -rf dist
+RUN rm -rf build
 
 RUN cd /tmp && npm install -q
 
